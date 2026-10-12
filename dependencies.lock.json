@@ -1,0 +1,40 @@
+{
+  "format": 1,
+  "external_swift_packages": [
+    {
+      "name": "Sparkle",
+      "version": "2.9.6",
+      "revision": "ac2def288cbff5cfc7df3ffef6abdf45b72bcb0a",
+      "license": "MIT",
+      "lock": "Package.resolved"
+    }
+  ],
+  "external_python_packages": [],
+  "verified_toolchain": {
+    "macOS": "27.0.1 (26A434)",
+    "Xcode": "27.0 (27A266a)",
+    "Swift": "6.4 (swiftlang-6.4.0.34.1)",
+    "Python": "3.14.7",
+    "SQLite": "3.53.3",
+    "deployment_target": "macOS 14.0",
+    "swift_language_mode": "5"
+  },
+  "runtime": "Developer builds use local Python; distribution bundles arm64 Python per scripts/runtime.lock.json with verified SHA-256.",
+  "parser_version": "harbor-mime-1",
+  "distribution": {
+    "architecture": "arm64",
+    "Python": "3.14.8",
+    "SQLite": "3.53.1",
+    "runtime_lock": "scripts/runtime.lock.json",
+    "version": "0.1.16"
+  },
+  "nix": {
+    "version": "2.34.8",
+    "input_lock": "flake.lock",
+    "nixpkgs_revision": "a7868a727837f3c09cee2ce0ca671c76b1589fed",
+    "system": "aarch64-darwin",
+    "Python": "3.13.15",
+    "SQLite": "3.53.3",
+    "native_sdk": "host Xcode, not a hermetic Nix Apple SDK build"
+  }
+}

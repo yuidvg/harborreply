@@ -1,0 +1,10 @@
+{
+  "repository": "yuidvg/harborreply-releases",
+  "signing_identity": null,
+  "notary_profile": "HarborReply",
+  "sparkle_key_account": "HarborReply",
+  "sparkle_public_key": "Vyj7PaJfKkPxmGWOE7GfKIMvaR+z8AUzsb5rPxVGJ7k=",
+  "minimum_build": null,
+  "mandatory_after_hours": 72,
+  "policy_valid_days": 90
+}

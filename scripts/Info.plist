@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleExecutable</key><string>HarborReply</string>
+<key>CFBundleIdentifier</key><string>local.harborreply.app</string>
+<key>CFBundleName</key><string>HarborReply</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleShortVersionString</key><string>0.1.27</string>
+<key>CFBundleVersion</key><string>28</string>
+<key>LSMinimumSystemVersion</key><string>14.0</string>
+<key>LSUIElement</key><true/>
+<key>NSAppleEventsUsageDescription</key><string>選択メールと、本人が開始した全メールのローカル索引、本人が選んだ差出人の送信例を読み、このアプリが作った返信下書きを操作します。送信はしません。</string>
+<key>NSMicrophoneUsageDescription</key><string>操作中だけ日本語の返信指示を端末内で文字起こしします。音声は保存しません。</string>
+<key>NSSpeechRecognitionUsageDescription</key><string>端末内の日本語音声認識を利用します。利用不可の場合はテキスト入力に戻ります。</string>
+</dict></plist>

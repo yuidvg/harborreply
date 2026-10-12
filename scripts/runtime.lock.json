@@ -1,0 +1,13 @@
+{
+  "release": "20261003",
+  "python": "3.14.8",
+  "source": "https://github.com/astral-sh/python-build-standalone",
+  "runtimes": [
+    {
+      "architecture": "arm64",
+      "filename": "cpython-3.14.8+20261003-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.14.8%2B20261003-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "sha256": "ed14e9042f36c0aa18383f5d9729bcbf17847e842666a793b5a5a5d8505c0ca1"
+    }
+  ]
+}
