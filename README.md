@@ -130,7 +130,7 @@ scripts/verify-main-real.sh --allow-real-mail
 ### 初回だけ必要な準備
 
 - Apple Developer Programの **Developer ID Application** 証明書と秘密鍵を、このMacのKeychainに用意する。Apple Development証明書では正式配布できません。
-- `gh auth login --hostname github.com` で配布アカウントに接続する。ソースとは別に、READMEで初期化した公開の配布用リポジトリを作る。GitHub Pagesの設定は不要で、`updates` ブランチの固定raw URLを利用します。
+- `gh auth login --hostname github.com` で配布アカウントに接続する。ソースとリリースは公開リポジトリ `yuidvg/harborreply` に統一します。GitHub Pagesの設定は不要で、`updates` ブランチの固定raw URLを利用します。
 - `nix run .#build` で固定版Sparkleを取得後、次で専用の更新鍵をKeychainに作る。秘密鍵をリポジトリやNix storeへ保存しない。鍵の安全なバックアップは別途管理する。
 
 ```sh
@@ -144,7 +144,7 @@ xcrun notarytool store-credentials HarborReply
 
 | 設定 | 内容 |
 |---|---|
-| `repository` | 配布専用 `所有者/リポジトリ`。公開ZIPを誰でも取得できることを前提とする |
+| `repository` | リリース先 `所有者/リポジトリ`。公開ZIPを誰でも取得できることを前提とする |
 | `signing_identity` | Keychainの実際の `Developer ID Application: ...` 証明書名 |
 | `notary_profile` | 上で保存した公証用Keychainプロファイル名 |
 | `sparkle_key_account` | 上で作ったSparkle鍵のKeychainアカウント名 |
@@ -183,7 +183,7 @@ ZIPを署名・公証してDraft Releaseにアップロードし、公開後に�
 
 ### このMacで済ませた初回準備
 
-配布先は [yuidvg/harborreply-releases](https://github.com/yuidvg/harborreply-releases) に作成済みです。Sparkle署名鍵はKeychainの `HarborReply` アカウントに作成し、公開鍵を設定済みです。初回の署名検証はKeychainのアクセス許可待ちになる場合があります。`release.json` に配布先と公開鍵を設定しています。
+配布先は [yuidvg/harborreply](https://github.com/yuidvg/harborreply) に作成済みです。Sparkle署名鍵はKeychainの `HarborReply` アカウントに作成し、公開鍵を設定済みです。初回の署名検証はKeychainのアクセス許可待ちになる場合があります。`release.json` に配布先と公開鍵を設定しています。
 
 Developer ID証明書の申請ファイルは `~/Library/Application Support/HarborReply Signing/HarborReply-Developer-ID.certSigningRequest` にあります。対応する秘密鍵はlogin Keychainに保存済みです。[Appleの証明書ページ](https://developer.apple.com/account/resources/certificates/add)で **Developer ID Application** を選び、このCSRをアップロードして発行してください。取得した証明書をこのMacにインポートし、`release.json` の `signing_identity` に実際の証明書名を設定します。
 

@@ -36,7 +36,7 @@ def api(repo, endpoint, method='GET', body=None):
 
 def validate_config(config, info):
     if not isinstance(config.get('repository'), str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]*/[A-Za-z0-9][A-Za-z0-9_.-]*', config['repository']):
-        raise ValueError('release.json: repository に配布専用の公開 owner/repo を設定してください')
+        raise ValueError('release.json: repository にリリース先の公開 owner/repo を設定してください')
     identity = config.get('signing_identity')
     if not isinstance(identity, str) or not identity.startswith('Developer ID Application: '):
         raise ValueError('release.json: signing_identity に Developer ID Application 証明書を設定してください')
@@ -255,7 +255,7 @@ def main():
     if config['signing_identity'] not in identities: raise ValueError('Developer ID signing identity is unavailable')
     repository = api(config['repository'], '')
     if repository.get('private'):
-        raise ValueError('Use an initialized public distribution repository (README only is sufficient)')
+        raise ValueError('Use an initialized public repository for releases')
     api(config['repository'], 'git/ref/heads/' + repository['default_branch'])
     if not repository.get('permissions', {}).get('push'): raise ValueError('GitHub write access is required')
     run('/usr/bin/xcrun', 'notarytool', 'history', '--keychain-profile', config['notary_profile'], capture=True)
